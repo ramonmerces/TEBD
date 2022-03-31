@@ -9,16 +9,15 @@ $dbname = $env['DB_NAME'];
 $conn = new mysqli($servername, $username, $password);
 // Check connection
 if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+    die("Connection failed: " . $conn->connect_error);
 }
 
 // Create database
-$sql = "CREATE DATABASE ".$dbname;
-if ($conn->query($sql) === TRUE) {
-  print("Database ".$dbname." criada com sucesso");
+$sql = "CREATE DATABASE " . $dbname;
+if ($conn->query($sql) === true) {
+    print("Database " . $dbname . " criada com sucesso");
 } else {
-  echo "Error creating database: " . $conn->error;
+    echo "Error creating database: " . $conn->error;
 }
 
 $conn->close();
-?>

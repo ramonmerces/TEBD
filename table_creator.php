@@ -18,29 +18,28 @@ $diretorio = dir($path);
 
 $arquivo = scandir($path)[2];
 
-
 $delimitador = ',';
 $cerca = '"';
 
 // Abrir arquivo para leitura
-$f = fopen($path.$arquivo, 'r');
+$f = fopen($path . $arquivo, 'r');
 
-if ($f) { 
+if ($f) {
 // sql to create table
 
-$sql = "CREATE TABLE internamentos (`ID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY";
+    $sql = "CREATE TABLE internamentos (`ID` INT NOT NULL AUTO_INCREMENT PRIMARY KEY";
     // Ler cabecalho do arquivo
-$cabecalho = fgetcsv($f, 0, $delimitador, $cerca);
-foreach($cabecalho as $coluna){
-    $value =str_replace("\x00", "_", $coluna);
-    $sql = $sql.", ".$value." text";
-};
+    $cabecalho = fgetcsv($f, 0, $delimitador, $cerca);
+    foreach ($cabecalho as $coluna) {
+        $value = str_replace("\x00", "_", $coluna);
+        $sql = $sql . ", " . $value . " text";
+    }
+    ;
 }
-$sql = $sql.");";
+$sql = $sql . ");";
 print("Query => ");
-print($sql."\n");
+print($sql . "\n");
 print("\n ================================================================================================= \n");
-
 
 if ($conn->query($sql)) {
     print("Tabela internamentos criada com sucesso \n");
@@ -49,4 +48,3 @@ if ($conn->query($sql)) {
 }
 
 $conn->close();
-?>
