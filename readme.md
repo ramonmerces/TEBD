@@ -15,4 +15,4 @@
 ### DB_generator vai criar o banco no seu BD
 ### table_creator vai criar a tabela "internamentos"
 ### table_populator irá percorrer todos os arquivos na pasta data e popular seu banco de dados!
-### Obrigado pela atenção! =* e bom semetre a todos!
+### Obrigado pela atenção! =* e bom semestre a todos!
