@@ -1,4 +1,5 @@
 <?php
+ini_set("memory_limit","-1");
 $env = parse_ini_file('.env');
 
 $servername = $env['SERVER_NAME'];
